@@ -40,6 +40,7 @@
       }
     }
   </script>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     
 
 </head>
@@ -203,7 +204,38 @@
           </div>End Stats Item -->
 
         </div>
+        <div class="row">
+          <script type="text/javascript">
+            google.charts.load('current', {
+              'packages':['geochart'],
+            });
+            google.charts.setOnLoadCallback(drawRegionsMap);
 
+            function drawRegionsMap() {
+              var data = google.visualization.arrayToDataTable([
+                ['Country', 'Sales'],
+                ['Germany', 5],
+                ['United States', 11],
+                ['Canada', 3],
+                ['India', 3],
+                ['United Kingdom', 4],
+                ['Pakisthan', 2],
+                ['Morocco', 1],
+                ['Finland', 1],
+                ['Norway', 1],
+                ['Greece', 1]
+              ]);
+
+              var options = {colorAxis: {colors: ['#62646a', '#62646a']},};
+              
+
+              var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
+
+              chart.draw(data, options);
+            }
+          </script>
+          <div id="regions_div" style="width: 100%; height: 500px;"></div>
+        </div>
       </div>
 
     </section><!-- /Stats Section -->
