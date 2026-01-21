@@ -234,18 +234,13 @@
                 ['Norway', 1],
                 ['Greece', 1]
               ]);
-
-              var options = {colorAxis: {colors: ['#62646a', '#62646a']},};
-              
-
+              var options = {
+                colorAxis: {colors: ['#149ddd', '#149ddd']},
+                datalessRegionColor: '#666',
+              };
               var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
-
-              
-
-
               chart.draw(data, options);
-            }
-            
+            }    
           </script>
           <div id="regions_div" style="width: 100%; height: 500px;"></div>
         </div>
